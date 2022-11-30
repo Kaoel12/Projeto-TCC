@@ -1,0 +1,219 @@
+<!--? include 'php_script/desenvolvedor-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Gerenciamento do Desenvolvedor</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Gerenciamento do Desenvolvedor<h1>
+
+			<form class="develop-box">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_vin()">Vinícola</button>
+									</div>
+								</div>					
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_vtr()">Vinicultor</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_uva()">Uva</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_vnh()">Vinho</button>
+
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_drv()">Derivado</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_cls()">Classificação</button>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">	
+						<div class="form-group">
+							<div class="row">
+												
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_tip()">Tipo</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_cad_dvr()">Desenvolvedor</button>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="button" class="btn btn-primary btn-sm btn-block" onclick="on_main_page()">Home</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<form class="contact-form-sm" method="POST" action="desenvolvedor.html" name="dev_frm">
+				<div class="row">
+<!-- 	row 0	-->
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-7">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_vin();">
+							<option value="0">Selecione...</option>
+								<!--
+							    <? foreach($con_vnra as $vnra){
+						        	$sel_vnra = ($dev_cod == $vnra['id_vinicultura'] ? "' selected='selected'>" : "'>" );
+									echo "<option value='".$vnra['id_vinicultura'].$sel_vnra.$vnra['nome']."</option>";
+						        } ?>
+						    	-->
+						</select>
+					</div>
+					<div class="col-md-1">
+						<div class="form-group">
+							<button type="button" class="form-control form-control-sm" onClick="on_page_clear()">Reset</button>
+						</div>
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" placeholder="Código" readonly ><!--value="<? echo $dev_cod;?>" -->
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" placeholder="Vinícola" readonly ><!--value="<?echo $dev_name;?>"-->
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" placeholder="dd/mm/aaaa" readonly ><!--value ="<?echo $dev_cod == "" ? "" : date_format(date_create($dev_date), 'd/m/Y');?>"-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-6" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" placeholder="E-mail" readonly ><!--value="<?echo $dev_email;?>"-->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" placeholder="Vinicultor" readonly ><!--value="<?echo $dev_resp;?>"-->
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<select class="form-control form-control-sm" size="9">
+								<option value="0">Vinhos:</option>
+								<!--
+								<? foreach($dev_vinh as $vinho){
+									echo "<option value='".$vinho['id_vinho']."'>".$vinho['nome_vinho']."</option>";
+								}?>
+								-->
+						    </select>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<select class="form-control form-control-sm" size="9">
+								<option value="0">Derivados:</option>
+								<!--
+								<? foreach($dev_derv as $deriv){
+									echo "<option value='".$deriv['id_deriv']."'>".$deriv['nome_deriv']."</option>";
+							    }?>
+								-->
+						    </select>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<script type="text/javascript">
+		function on_select_vin() {
+			document.getElementById('sel_cod').value;
+			document.dev_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+
+		function on_cad_vin(){
+	    	window.location.href = 'cad_vinicolas.html';
+		};
+
+		function on_cad_vtr(){
+	    	window.location.href = 'cad_vinicultores.html';
+		};
+
+		function on_cad_uva(){
+	    	window.location.href = 'cad_uvas.html';
+		};
+
+		function on_cad_vnh(){
+	    	window.location.href = 'cad_vinhos.html';
+		};
+
+		function on_cad_drv(){
+	    	window.location.href = 'cad_derivados.html';
+		};
+
+		function on_cad_cls(){
+	    	window.location.href = 'cad_classificacoes.html';
+		};
+
+		function on_cad_tip(){
+	    	window.location.href = 'cad_tipos.html';
+		};
+		
+		function on_cad_dvr(){
+	    	window.location.href = 'cad_desenvolvedores.html';
+		};
+
+		function on_main_page(){
+	    	window.location.href = 'index.html';
+		};
+	</script>
+</body>
+

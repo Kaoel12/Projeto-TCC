@@ -1,0 +1,237 @@
+<!--? include 'php_script/cad_vinicolas-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Vinícolas</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Vinícolas<h1>
+			<form class="contact-form-sm" method="POST" action="cad_vinicolas.html" name="cad_vra_frm" id="cad_vra_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_vin();">
+							<option value="0">Selecione...</option>
+							<!--
+						    <? foreach($vin_sel as $vnra){
+					        	$sel_vnra = ($vin_cod == $vnra['id_vinicultura'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$vnra['id_vinicultura'].$sel_vnra.$vnra['nome']."</option>";
+					        }?>
+					    	-->
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_cod" id="vra_cod" placeholder="Código" readonly><!-- value="<? echo $vin_cod;?>" -->
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_nam" id="vra_nam" placeholder="Vinícola"><!-- value="<?echo $vin_name;?>" maxlength="100" requered-->
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<input type="date" class="form-control form-control-sm" name="vra_dat" = id="vra_dat" ><!--value ="<?echo $vin_date;?>" required-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_cep" id="vra_cep" placeholder="Cep 00000-000" onblur="pesquisacep(this.value)" ><!--value="<?echo $vin_cep;?>" maxlength="9" required -->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_loc" id="vra_loc" placeholder="Locadouro"><!-- value="<?echo $vin_loc;?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_num" id="vra_num" placeholder="Número"><!-- value="<?echo $vin_num;?>" maxlength="20" required-->
+						</div>
+					</div>
+<!--	row 3	-->
+					<div class="col-md-4" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_cmp" id="vra_cmp" placeholder="Complemento"><!-- value="<?echo $vin_cmp;?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_bar" id="vra_bar" placeholder="Bairro" ><!--value="<?echo $vin_bar;?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_cid" id="vra_cid" placeholder="Cidade" ><!--value="<?echo $vin_cid;?>" maxlength="50" required-->
+						</div>
+					</div>
+<!--	row 4	-->
+					<div class="col-md-3">
+						<div class="form-group">
+							<select class="form-control form-control-sm" name="vra_est" id="vra_est" required>
+								<option value="0">Estados...</option>
+							    <!--?for ($i = 0; $i <= 26; $i++){
+						        	$sel_est = ($vin_est == $est_sig[$i] ? "' selected='selected'>" : "'>" );
+									echo "<option value='".$est_sig[$i].$sel_est.$est_name[$i]."</option>";
+						        }?-->
+						    </select>
+						</div>
+					</div>
+
+					<div class="col-md-5" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vra_eml" name="vra_eml" placeholder="E-mail"><!-- value="<?echo $vin_email;?>" maxlength="50" -->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-10">
+									<select class="form-control form-control-sm" name="vra_vtr" id="vra_vtr">
+										<option value="0">Vinicultores...</option>
+									    <!--?foreach($vin_vntr as $vntr){
+								        	$sel_resp = ($vin_resp == $vntr['id_resp'] ? "' selected='selected'>" : "'>" );
+							 				echo "<option value='".$vntr['id_resp'].$sel_resp.$vntr['nome_resp']."</option>";
+								        }?-->
+								    </select>
+								</div>
+								<div class="col-md-2">
+								    <button type="button" class="btn btn-primary btn-sm btn-block" onClick="on_cad_vtr()" >
+      									<img src="cadastro/lupa.png" width="20" height="20" >
+      								</button>
+								</div>
+							</div>
+						</div>
+					</div>
+<!--	row 5	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar<!--? echo $vin_cod =="" ? "Salvar" : "Atualizar"; ?--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_vin_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_dev_page()">Voltar</button>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		//retirado da pagina "https://viacep.com.br/exemplo/javascript/"
+		function limpa_formulário_cep() {
+            document.getElementById('vra_loc').value=("");
+            document.getElementById('vra_num').value=("");
+            document.getElementById('vra_cmp').value=("");
+            document.getElementById('vra_bar').value=("");
+            document.getElementById('vra_cid').value=("");
+            document.getElementById('vra_est').value=("");
+	    }
+
+	    function meu_callback(conteudo) {
+	        if (!("erro" in conteudo)) {
+	            document.getElementById('vra_loc').value=(conteudo.logradouro);
+	            document.getElementById('vra_bar').value=(conteudo.bairro);
+	            document.getElementById('vra_cid').value=(conteudo.localidade);
+	            document.getElementById('vra_est').value=(conteudo.uf);
+	        } else {
+	            limpa_formulário_cep();
+	            alert("CEP não encontrado.");
+	        }
+	    }
+	        
+	    function pesquisacep(valor) {
+	        var cep = valor.replace(/\D/g, '');
+
+	        if (cep != "") {
+	            var validacep = /^[0-9]{8}$/;
+
+	            if(validacep.test(cep)) {
+	                document.getElementById('vra_loc').value="...";
+	                document.getElementById('vra_num').value="...";
+	                document.getElementById('vra_cmp').value="...";
+	                document.getElementById('vra_bar').value="...";
+	                document.getElementById('vra_cid').value="...";
+
+	                var script = document.createElement('script');
+	                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+	                document.body.appendChild(script);
+	            
+	            } else {
+	                limpa_formulário_cep();
+	                alert("Formato de CEP inválido.");
+	            }
+
+	        } else {
+	            limpa_formulário_cep();
+	        }
+	    };
+	</script>
+
+	<script type="text/javascript">
+		function on_select_vin() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('vra_cod').value = "select";
+			document.cad_vra_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_vinicolas.html';
+		};
+
+		function on_cad_vtr(){
+	    	window.location.href = 'cad_vinicultores.html';
+		};
+
+		function on_vin_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('vra_cod').value = "delete";
+			document.cad_vra_frm.submit();
+		};
+		
+		function on_dev_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+</body>
+

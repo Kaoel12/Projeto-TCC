@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>São Miguel Arcanjo Uvas</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/css/responsive-tabs.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script-->
+
+	<!--script src="https://kit.fontawesome.com/a49a4b92eb.js" crossorigin="anonymous"></script-->
+
+	<script type="text/javascript">
+	var scroll1 = window.pageYOffset;
+	window.onscroll = function(){
+		var scroll2 = window.pageYOffset;
+		if(scroll1 > scroll2){
+			document.querySelector('nav').style.top = "0";
+		}else{
+			document.querySelector('nav').style.top = "-100px";
+		}
+		scroll1 = scroll2;
+	}
+	</script>
+</head>
+
+<body>
+<!----------------Header------------------->
+<section id="header">
+	<nav class="navbar navbar-light fixed-top">
+  <div class="container">
+  	<a class="navbar-brand" href="#"><img src="img/home/pp.jpg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <!--<span class="navbar-toggler-icon"></span>-->
+    <!--i class="fas fa-bars"></i-->
+    <div class="animation-burger"><span></span><span></span><span></span></div>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+
+		  $('.navbar-toggler').on('click', function () {
+
+		    $('.animation-burger').toggleClass('open');
+		  });
+		});
+    </script>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto wow fadeInDown" data-wow-duration="1s">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="catalogo.html">CATÁLOGO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vinicolas.html">VINÍCOLAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia.html">HISTÓRIA DE SÃO MIGUEL ARCANJO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia-uva.html">HISTÓRIA DA UVA EM SÃO MIGUEL ARCANJO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sobre.html">SOBRE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="creditos.html">CRÉDITOS</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+</section>
+
+<!----------------Crédits------------------>
+<section id=Credits>
+	<div class="container">
+		<h1 class="text-center wow fadeInDown">Nossos agradecimentos</h1>
+			<div class="row wow fadeInDown text-center">
+				<div class="table-responsive">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">Créditos</th>
+				      <th scope="col">Links</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Tim Mossholder on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/KDlLiCL7XPk"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Tim Mossholder on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/-r3ARWNHekk"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Amos Bar-Zeev on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/GibvqWh_OcE"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">4</th>
+				      <td>Photo Mix por Pixabay </td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pixabay.com/pt/photos/vinho-vidro-branco-uvas-bebidas-1761613/"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">5</th>
+				      <td>Written Labyrinth on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/uRcRpXrSX8M"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">6</th>
+				      <td>Hari Nandakumar on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/O5CtZHg5VgU"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">7</th>
+				      <td>Daniel Vogel on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/YxPkpo8L8Ck"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">8</th>
+				      <td>Dan Meyers on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/IQVFVH0ajag"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">9</th>
+				      <td>Alejandro Escamilla on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/N7XodRrbzS0" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Alejandro Escamilla"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">10</th>
+				      <td>Alejandro Escamilla on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/xII7efH1G6o" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Alejandro Escamilla"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">11</th>
+				      <td>Adele Payman on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/2oYMwuFgnTg" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Adele Payman"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">12</th>
+				      <td>Sven Wilhelm on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/2cRXSWyMHA8" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Sven Wilhelm"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">13</th>
+				      <td>Rohit Tandon on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/fLNStYwV01Y" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Rohit Tandon"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">14</th>
+				      <td>Thomas Verbruggen on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/z2-MedUataE" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Thomas Verbruggen"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">15</th>
+				      <td>Markus Spiske on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/1zYB6H7scJw" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Markus Spiske"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">16</th>
+				      <td>Lasseter Winery on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/XtsYdFTkxkI" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Lasseter Winery"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">17</th>
+				      <td>Lasseter Winery on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/Oez5ZkBlIJI" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Lasseter Winery"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">18</th>
+				      <td>Max Delsid on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/yourTX6mGec" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Max Delsid"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">19</th>
+				      <td>Max Delsid on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/PsZJgxhcjFM" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Max Delsid"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">20</th>
+				      <td>Nacho Domínguez Argenta on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/cCVzi_mKovs" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Nacho Domínguez Argenta"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">21</th>
+				      <td>Nacho Domínguez Argenta on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/F_ilCik66Hg" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Nacho Domínguez Argenta"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">22</th>
+				      <td>Jon Moore on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/9OWSArOuets" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Jon Moore"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">23</th>
+				      <td>Jon Moore on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/yfFqWxzblrI" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Jon Moore"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">24</th>
+				      <td>Icons made by Freepik</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">25</th>
+				      <td>jose alfonso sierra on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/XIYTOBTHeaQ" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from jose alfonso sierra"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">26</th>
+				      <td>chrispla por Pixabay</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pixabay.com/pt/photos/uva-vinhedo-viticultura-2911039/" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from chrispla"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">27</th>
+				      <td>Joanna Kasprzycka on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/VKaETTYHNt0" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Joanna Kasprzycka"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">28</th>
+				      <td>Regina Barker on Unsplash</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://unsplash.com/photos/J1y78LpR4TY" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Regina Barker"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">29</th>
+				      <td>PNG ALL - Grape PNG Image</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="http://www.pngall.com/grape-png/download/4720" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">30</th>
+				      <td>PNG TREE - Two Bottles And Glasses Of Wine Red White</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pngtree.com/freepng/two-bottles-and--glasses-of-wine---red--white_3562523.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">31</th>
+				      <td>PNG TREE - Vector Red Wine Bottles Blank Template</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pngtree.com/freepng/vector-red-wine-bottles-blank-template_55639.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">32</th>
+				      <td>PNG TREE - Uvas Verdes E Pretas Sem Sementes Frutas</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pt.pngtree.com/freepng/seedless-green-and-black-grapes-fruit_5047748.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">33</th>
+				      <td>Matthias Böckel por Pixabay</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pixabay.com/pt/photos/frutas-uva-planta-de-alpinista-3219488/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">34</th>
+				      <td>congerdesign por Pixabay</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://pixabay.com/pt/photos/vinho-vinho-tinto-vidro-bebida-541922/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">35</th>
+				      <td>Claudio Eigi Iwasaki</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://www.facebook.com/claudioeigi.iwasaki" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">36</th>
+				      <td>Bootstrap</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://getbootstrap.com.br/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">37</th>
+				      <td>Wow.js</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://www.delac.io/wow/index.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">38</th>
+				      <td>Animate.css</td>
+				      <td><ul class="wow fadeInDown">
+							<li>
+								<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener noreferrer"><i class="fas fa-link"></i></a>
+								<i class="fas fa-link"></i>
+							</li></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<!----------Footer---------->
+	<section id="Footer">
+		<div class="padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+						<p class="site text-center">Catálogo de Derivados da Uva de São Miguel Arcanjo</p>
+						<p class="email text-center">smauvas@gmail.com</p>
+						<button type="button" class="btn btn-success"><a href="login.php" target="_blank">Acesso Administrativo</a></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<script src="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/js/jquery.responsiveTabs.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script type="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+
+
+</body>
+
+</html>

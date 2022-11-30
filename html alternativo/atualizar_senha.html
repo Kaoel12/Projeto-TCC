@@ -1,0 +1,137 @@
+<!--? include 'php_script/atualizar_senha-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Alteração de Senha</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<!----------Seção de Contato---------->
+	<section id="Contact">
+		<div class="padding">
+			<div class="container">
+				<h1 class="text-center">Alteração de Senha</h1>
+				<div class="row">
+					<div class="text-center div-ab apresentacao wow fadeInLeft" text-data-wow-duration="2s">
+						<form class="contact-form" name="on_login" id="on_login" method="POST" action="atualizar_senha.html">
+							<!--? 
+								if ($email == "") {
+									echo "-->
+										<div class='form-group'>
+											<div class='row'>
+												<div class='col-md-7'>
+													<input type='text' class='form-control' id='email_user' name='email_user' placeholder='Seu Email' maxlenght='20' required>
+												</div>
+												<div class='col-md-5'>
+													<button type='submit' class='form-control' >Verificar</button>
+												</div>
+												
+											</div>
+										</div>
+										<br>
+										<div class='form-group'>
+											<button type='button' class='form-control' onclick='on_login_page()'>Voltar</button>
+										</div><!--
+									";
+								} else {
+
+									echo $result == "" ? "" :
+											"<div class='form-group'>
+												<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>
+											</div>";
+									
+/*									echo "
+										<div class='form-group'>
+											<input type='text' class='form-control' value='".$user_log."' placeholder='Usuário' >
+										</div>
+										<div class='form-group'>
+											<input type='text' class='form-control' value='".$eml_log."' placeholder='E-mail'>
+										</div>"
+*/
+									echo "
+										<div class='form-group'>
+											<input type='text' class='form-control' value='".$row["nome_adm"]."' placeholder='Usuário' >
+										</div>
+										<div class='form-group'>
+											<input type='text' class='form-control' value='".$row["email_adm"]."' placeholder='E-mail'>
+										</div>
+										
+										<div class='form-group'>
+											<input type='password' class='form-control' id='login_pass1' name='login_pass1' placeholder='Nova senha' maxlenght='20' required>
+										</div>
+
+										<div class='form-group'>
+											<input type='password' class='form-control' id='login_pass2' name='login_pass2' placeholder='Confirme a nova senha' maxlenght='20' required>
+										</div>
+
+										<div class='form-group'>
+											<div class='row'>
+												<div class='form-group col-md-6' >
+													<button type='button' class='form-control' onclick='on_renew_pass()'>Trocar Senha</button>
+												</div>
+												<div class='form-group col-md-6' >
+													<button type='submit' class='form-control' onclick='on_sel_login()'>Login</button>
+												</div>
+											</div>
+										</div>
+									";
+								}
+							?-->
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!----------Footer---------->
+	<section id="Footer">
+		<div class="padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+						<p class="site text-center">Catálogo de Vinhos e Derivados de São Miguel Arcanjo</p>
+						<p class="email text-center">smauvas@gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		function on_check_user() {
+			document.getElementById('email_user').value;
+			document.on_login.submit();
+		};
+
+		function on_login_page() {
+	    	window.location.href = 'login.html';
+		};
+
+		function on_renew_pass() {
+	    	window.location.href = 'atualizar_senha.html';
+		};
+		function on_sel_login() {
+			document.getElementById('login_user').value;
+			document.getElementById('login_pass').value;
+			document.on_login.submit();
+		};
+	</script>
+
+<script src="js/popper.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script type="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</body>
+

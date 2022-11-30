@@ -1,0 +1,143 @@
+<!--<? include 'php_script/cad_desenvolvedores-script.php';?>-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Desenvolvedores</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Desenvolvedores<h1>
+			<form class="contact-form-sm" method="POST" action="cad_desenvolvedores.html" name="cad_dvr_frm" id="cad_dvr_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_dvr();">
+							<option value="0">Selecione...</option>
+							<!--
+						    <? foreach($dvr_sel as $dvrs){
+					        	$sel_dvrs = ($dvr_cod == $dvrs['id_adm'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$dvrs['id_adm'].$sel_dvrs.$dvrs['nome_adm']."</option>";
+					        }?>
+					    	-->
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--
+						<? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?>
+						-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="dvr_cod" id="dvr_cod" placeholder="Código" readonly><!-- value="<? echo $dvr_cod;?>" -->
+						</div>
+					</div>
+					<div class="col-md-5">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="dvr_nam" id="dvr_nam" placeholder="Desenvolvedor"><!-- value="<?echo $dvr_nam;?>" maxlength="50" requered-->
+						</div>
+					</div>
+					<div class="col-md-5" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="dvr_eml" name="dvr_eml" placeholder="E-mail"><!-- value="<?echo $dvr_eml;?>" maxlength="50" -->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-4" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="dvr_usr" id="dvr_urs" placeholder="Usuário"><!-- value="<?echo $dvr_usr;?>" maxlength="20" required -->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="password" class="form-control form-control-sm" name="dvr_pw1" id="dvr_pw1" placeholder="Senha" maxlength="20" required onkeyup="on_valida_senha()";>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="password" class="form-control form-control-sm" name="dvr_pw2" id="dvr_pw2" placeholder="Confirme a senha" maxlength="20" required onkeyup="on_valida_senha()";>
+							<span id='message'></span>
+						</div>
+					</div>
+<!--	row 3	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br><br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar <!--? echo $dvr_cod =="" ? "Salvar" : "Atualizar"; ?--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_vin_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_dev_page()">Voltar</button>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<script type="text/javascript">
+		function on_valida_senha() {
+			 if (document.getElementById('dvr_pw1').value == document.getElementById('dvr_pw2').value){
+				document.getElementById('message').style.color = 'green';
+    			document.getElementById('message').innerHTML = 'Senhas iguais';
+
+		    } else if (document.getElementById('dvr_pw2').value != ""){
+    			document.getElementById('message').style.color = 'red';
+    			document.getElementById('message').innerHTML = 'Senhas diferentes';
+		    }
+		};
+
+		function on_select_dvr() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('dvr_cod').value = "select";
+			document.cad_dvr_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_desenvolvedores.html';
+		};
+
+		function on_vin_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('dvr_cod').value = "delete";
+			document.cad_dvr_frm.submit();
+		};
+		
+		function on_dev_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+</body>
+

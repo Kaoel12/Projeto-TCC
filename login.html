@@ -1,0 +1,159 @@
+<!--? include 'php_script/login-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>São Miguel Arcanjo Uvas</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script-->
+
+	<!--script src="https://kit.fontawesome.com/a49a4b92eb.js" crossorigin="anonymous"></script-->
+
+	<script type="text/javascript">
+	var scroll1 = window.pageYOffset;
+	window.onscroll = function(){
+		var scroll2 = window.pageYOffset;
+		if(scroll1 > scroll2){
+			document.querySelector('nav').style.top = "0";
+		}else{
+			document.querySelector('nav').style.top = "-100px";
+		}
+		scroll1 = scroll2;
+	}
+	</script>
+</head>
+
+<body>
+	<!----------------Header------------------->
+<section id="header">
+	<nav class="navbar navbar-light fixed-top">
+  <div class="container">
+  	<a class="navbar-brand" href="#"><img src="img/home/pp.jpg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <!--<span class="navbar-toggler-icon"></span>-->
+    <!--i class="fas fa-bars"></i-->
+    <div class="animation-burger"><span></span><span></span><span></span></div>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+
+		  $('.navbar-toggler').on('click', function () {
+
+		    $('.animation-burger').toggleClass('open');
+		  });
+		});
+    </script>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto wow fadeInDown" data-wow-duration="1s">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vinicolas.html">VINÍCOLAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="catalogo.html">CATÁLOGO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="entrevistas.html">ENTREVISTAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia-uva.html">HISTÓRIA DA UVA NA CIDADE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia.html">HISTÓRIA DE SÃO MIGUEL ARCANJO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sobre.html">SOBRE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="creditos.html">CRÉDITOS</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+</section>
+<!----------Seção de Contato---------->
+	<section id="Contact">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Acesso Adminstrativo<h1>
+			<div class="row">
+				<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 text-center div-ab apresentacao wow fadeInLeft" text-data-wow-duration="2s">
+					<form class="contact-form" method="POST" action="login.html">
+						<div class="form-group">
+							<input type="text" class="form-control" id="login_user" name="login_user" placeholder="Seu usuario" maxlenght="20" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="login_pass" name="login_pass" placeholder="Sua senha" maxlenght="20" required>
+						</div>
+						<div class="form-group col-md-12">
+							<br>
+							<!--? echo $result == "" ? "" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?-->
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="form-group col-md-6" >
+									<button type="submit" class="btn btn-primary" onclick="on_renew_pass()">Trocar Senha</button>
+								</div>
+								<div class="form-group col-md-6" >
+									<button type="submit" class="btn btn-primary" onclick="on_sel_login()">Login</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+
+	<!----------Footer---------->
+	<section id="Footer">
+		<div class="padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+						<p class="site text-center">Catálogo de Vinhos e Derivados de São Miguel Arcanjo</p>
+						<p class="email text-center">smauvas@gmail.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<!--
+		function on_sel_login() {
+			document.getElementById('login_user').value;
+			document.getElementById('login_pass').value;
+			document.on_login.submit();
+		};
+-->
+	<script type="text/javascript">
+		function on_renew_pass() {
+	    	window.location.href = 'atualizar_senha.html';
+		};
+		function on_sel_login() {
+			window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+
+<script src="js/popper.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script type="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+</body>
+

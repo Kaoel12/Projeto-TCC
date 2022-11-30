@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>São Miguel Arcanjo Uvas</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/swiper.min.css">
+
+
+	<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script-->
+
+	<!--script src="https://kit.fontawesome.com/a49a4b92eb.js" crossorigin="anonymous"></script-->
+
+	<script type="text/javascript">
+	var scroll1 = window.pageYOffset;
+	window.onscroll = function(){
+		var scroll2 = window.pageYOffset;
+		if(scroll1 > scroll2){
+			document.querySelector('nav').style.top = "0";
+		}else{
+			document.querySelector('nav').style.top = "-100px";
+		}
+		scroll1 = scroll2;
+	}
+	</script>
+</head>
+
+<body>
+	<!----------------Header------------------->
+<section id="header">
+	<nav class="navbar navbar-light fixed-top">
+  <div class="container">
+  	<a class="navbar-brand" href="#"><img src="img/home/pp.jpg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <!--<span class="navbar-toggler-icon"></span>-->
+    <!--i class="fas fa-bars"></i-->
+    <div class="animation-burger"><span></span><span></span><span></span></div>
+    <script type="text/javascript">
+    	$(document).ready(function () {
+
+		  $('.navbar-toggler').on('click', function () {
+
+		    $('.animation-burger').toggleClass('open');
+		  });
+		});
+    </script>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto wow fadeInDown" data-wow-duration="1s">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="catalogo.html">CATÁLOGO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="vinicolas.html">VINÍCOLAS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia.html">HISTÓRIA DE SÃO MIGUEL ARCANJO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sma-historia-uva.html">HISTÓRIA DA UVA EM SÃO MIGUEL ARCANJO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sobre.html">SOBRE</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="creditos.html">CRÉDITOS</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
+
+</section>
+
+<!----------------Banner------------------->
+<section id="Banner_historia_sma">
+	<!--img class="banner-img" src="img/catalogo/wine-4416111_1920.jpg"-->
+	<div class="carousel-caption">
+		<h4 class="text-center wow fadeInUp" data-wow-duration="2s">História da uva</h4>
+		<p class="text-center wow fadeInUp" data-wow-duration="2s">em São Miguel Arcanjo</p>
+	</div>
+</section>
+	<!----------Seção da historia---------->
+
+	<section id="SmaTimeline">
+		  <div class="timeline">
+		    <div class="swiper-container">
+		      <div class="swiper-wrapper">
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img0.jpg)" data-year="1950">
+		          <div class="swiper-slide-content"><span class="timeline-year">1950</span>
+		            <h4 class="timeline-title">MASUTO FUJIWARA</h4>
+		            <p class="timeline-text">A história se concretizou em 1950, a partir de um sonho do sr. Masuto Fujiwara na qual vira um cavalo branco que segurava, em sua boca, um cacho de uva Itália. Aproveitando a visita de um conhecido que vinha da cidade de Ferraz de Vasconcelos, onde, na época, se concentrava um grande cultivo de uva, o senhor Masuto pediu-lhe que trouxesse mudas de uva para que as plantasse nos arredores de sua casa</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img00.jpg)" data-year="1968">
+		          <div class="swiper-slide-content"><span class="timeline-year">1968</span>
+		            <h3 class="timeline-title">UVAS EM DESTAQUE</h3>
+		            <p class="timeline-text">As uvas produzidas no município de São Miguel Arcanjo começaram a ter um destaque maior em 1968, quando o município começou a participar na Exposição-Feira de Frutas de Clima Temperado, realizado anualmente no município de Itapetininga, na qual ganhou vários prêmios com as uvas Niágara e Itália.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img000.jpg)" data-year="1970">
+		          <div class="swiper-slide-content"><span class="timeline-year">1970</span>
+		            <h4 class="timeline-title">PLANTIO DE UVAS</h4>
+		            <p class="timeline-text">Na década de 70, mais de cem pessoas moravam e trabalhavam na fazenda Dom Bosco. Os irmãos Delaqua dirigiam a fazenda que iniciou com a cultura de uvas para fabricação de vinho. A Vitivinícola Cereser foi a pioneira da produção de uvas no município.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img1.jpg)" data-year="1983">
+		          <div class="swiper-slide-content"><span class="timeline-year">1983</span>
+		            <h4 class="timeline-title">1ª FESTA DA UVA</h4>
+		            <p class="timeline-text">Foi realizada a primeira festa da uva, contando com parques e shows regionais.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/vinha3_1.jpg)" data-year="2004">
+		          <div class="swiper-slide-content"><span class="timeline-year">2004</span>
+		            <h4 class="timeline-title">VINÍCOLAS FAMILIARES</h4>
+		            <p class="timeline-text">As primeiras vinícolas familiares começaram a surgir, e o estudo para uma possível rota do vinho foi iniciado.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img2.jpg)" data-year="2006">
+		          <div class="swiper-slide-content"><span class="timeline-year">2006</span>
+		            <h4 class="timeline-title">CAPITAL DAS UVAS FINAS E ITÁLIA</h4>
+		            <p class="timeline-text">São Miguel Arcanjo ganha o título de capital das uvas finas e Itália.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img3.jpg)" data-year="2009">
+		          <div class="swiper-slide-content"><span class="timeline-year">2009</span>
+		            <h4 class="timeline-title">1ª FESTA DO VINHO</h4>
+		            <p class="timeline-text">Foi realizada a primeira festa do vinho, para divulgar os produtos das vinícolas e a rota do vinho.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img4.jpg)" data-year="2018">
+		          <div class="swiper-slide-content"><span class="timeline-year">2018</span>
+		            <h4 class="timeline-title">MAIOR PRODUTOR DO ESTADO DE SÃO PAULO</h4>
+		            <p class="timeline-text">São Miguel é responsável por 40% da produção de uva do estado de São Paulo.</p>
+		          </div>
+		        </div>
+		        <div class="swiper-slide" style="background-image: url(img/historia_Sma/img5.jpg)" data-year="2019">
+		          <div class="swiper-slide-content"><span class="timeline-year">2019</span>
+		            <h4 class="timeline-title">ROTA DO VINHO</h4>
+		            <p class="timeline-text">A rota do vinho conta atualmente com 7 vinícolas, todas são frutos de agricultura familiar.</p>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="swiper-button-prev"></div>
+		      <div class="swiper-button-next"></div>
+		      <div class="swiper-pagination"></div>
+		    </div>
+		  </div>
+		</div> 	
+	</section>
+
+	<!----------Footer---------->
+	<section id="Footer">
+		<div class="padding">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center wow fadeInUp" data-wow-duration="1s">
+						<p class="site text-center">Catálogo de Derivados da Uva de São Miguel Arcanjo</p>
+						<p class="email text-center">smauvas@gmail.com</p>
+						<button type="button" class="btn btn-success"><a href="login.php" target="_blank">Acesso Administrativo</a></button>
+					</div>
+				</div>
+			</div>
+	</section>
+<!--script rel="stylesheet" href="js/jquery.js"></script-->
+<script src="js/popper.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script type="js/main.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+
+<script src="js/swiper.min.js"></script>
+<script>
+    $(function(){
+   
+var timelineSwiper = new Swiper ('.timeline .swiper-container', {
+  direction: 'vertical',
+  loop: false,
+  speed: 1600,
+  pagination: '.swiper-pagination',
+  paginationBulletRender: function (swiper, index, className) {
+    var year = document.querySelectorAll('.swiper-slide')[index].getAttribute('data-year');
+    return '<span class="' + className + '">' + year + '</span>';
+  },
+  paginationClickable: true,
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+  breakpoints: {
+    768: {
+      direction: 'horizontal',
+    }
+  }
+});                 
+	});
+</script>
+
+</body>
+
+</html>

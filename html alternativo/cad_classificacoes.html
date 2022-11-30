@@ -1,0 +1,105 @@
+<!--? include 'php_script/cad_classificacoes-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Classificações</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Classificações<h1>
+			<form class="contact-form-sm" method="POST" action="cad_classificacoes.html" name="cad_cls_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_cls();">
+							<option value="0">Selecione...</option>
+						    <!--? foreach($cls_sel as $class){
+					        	$sel_class = ($cls_cod == $class['id_classe'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$class['id_classe'].$sel_class.$class['classe']."</option>";
+					        }?-->
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="cls_cod" id="cls_cod" placeholder="Código" ><!--value="<? echo $cls_cod;?>" readonly-->
+						</div>
+					</div>
+					<div class="col-md-10">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="cls_nam" id="cls_nam" placeholder="Classificação" ><!--value="<? echo $cls_name?>" maxlength="50" required-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br><br><br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar<!--? echo $cls_cod =="" ? "Salvar" : "Atualizar"; ?--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_cls_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_vin_page()">Voltar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<script type="text/javascript">
+		function on_select_cls() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('cls_cod').value = "select";
+			document.cad_cls_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_classificacoes.html';
+		};
+
+		function on_cls_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('cls_cod').value = "delete";
+			document.cad_cls_frm.submit();
+			document.cad_cls_frm.submit();
+		};
+		function on_vin_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+
+</body>
+

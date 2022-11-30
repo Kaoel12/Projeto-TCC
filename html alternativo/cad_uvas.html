@@ -1,0 +1,123 @@
+<!--? include 'php_script/cad_uvas-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Uvas</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Uvas<h1>
+			<form class="contact-form-sm" method="POST" action="cad_uvas.html" name="cad_uva_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_uva();">
+							<option value="0">Selecione...</option>
+						    <!--? foreach($sel_uva as $uvas){
+					        	$sel_uvas = ($uva_cod == $uvas['id_uva'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$uvas['id_uva'].$sel_uvas.$uvas['nome_uva']."</option>";
+					        }?-->
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="uva_cod" id="uva_cod" placeholder="Código"><!-- value="<? echo $uva_cod;?>" readonly-->
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="uva_nam" id="uva_nam" placeholder="Uva"><!-- value="<? echo $uva_name;?>" maxlength="20" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="uva_org" = id="uva_org" placeholder="Origem"><!-- value="<? echo $uva_orig;?>" maxlength="50" required-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="uva_url" id="uva_url" placeholder="Imagem URL"><!-- value="<? echo $uva_url;?>" maxlength="100" required-->
+						</div>
+					</div>
+<!--	row 3	-->
+					<div class="col-md-12" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="uva_dsc" id="uva_dsc" placeholder="Descrição"><!-- value="<?echo $uva_desc;?>" maxlength="200" required-->
+						</div>
+					</div>
+<!--	row 4	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar<!--? echo $uva_cod =="" ? "Salvar" : "Atualizar"; ?--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_uva_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_dev_page()">Voltar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		function on_select_uva() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('uva_cod').value = "select";
+			document.cad_uva_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_uvas.html';
+		};
+
+		function on_uva_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('uva_cod').value = "delete";
+			document.cad_uva_frm.submit();
+		};
+
+		function on_dev_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+
+</body>
+

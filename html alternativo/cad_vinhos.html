@@ -1,0 +1,209 @@
+<!--? include 'php_script/cad_vinhos-script.php';?-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Vinhos</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Vinhos<h1>
+			<form class="contact-form-sm" method="POST" action="cad_vinhos.html" name="cad_vnh_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_vnh();">
+							<option value="0">Selecione...</option>
+						    <!--? foreach($vnh_sel as $vinh){
+					        	$sel_vinh = ($vnh_cod == $vinh['id_vinho'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$vinh['id_vinho'].$sel_vinh.$vinh['nome_vinho']."</option>";
+					        }?-->
+						</select>
+					</div>
+					<div class="col-md-12"></div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_cod" id="vnh_cod" placeholder="Código" ><!--value="<? echo $vnh_cod;?>" readonly-->
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_nam" id="vnh_nam" placeholder="Vinho"><!-- value="<?echo $vnh_name?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<input type="date" class="form-control form-control-sm" name="vnh_dat" = id="vnh_dat"><!-- value="<?echo $vnh_date?>" required-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-4" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_arm" id="vnh_arm" placeholder="Aroma"><!--
+							value="<?echo $vnh_arom?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_cor" id="vnh_cor" placeholder="Coloração"><!--value="<?echo $vnh_cor;?>" maxlength="50" required-->
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_url" id="vnh_url" placeholder="Imagem URL"><!--value="<?echo $vnh_url;?>" maxlength="100" required-->
+						</div>
+					</div>
+<!--	row 3	-->
+					<div class="col-md-12" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vnh_dsc" id="vnh_dsc" placeholder="Descrição"><!-- value="<?echo $vnh_desc;?>" maxlength="200" required-->
+						</div>
+					</div>
+<!--	row 4	-->
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-10">
+									<select class="form-control form-control-sm" name="vnh_uva" id="vnh_uva">
+										<option value="0">Uvas...</option>
+										<!--? foreach($vinh_uva as $uva){
+        						        	$sel_uva = ($vnh_uva == $uva['id_uva'] ? "' selected='selected'>" : "'>" );
+											echo "<option value='".$uva['id_uva'].$sel_uva.$uva['nome_uva']."</option>";
+								        }?-->						   
+									</select>
+								</div>
+								<div class="col-md-2">
+								    <button type="button" class="form-control form-control-sm" onClick="on_cad_uva()" >
+      									<img src="cadastro/lupa.png" width="15" height="15" >
+      								</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-10">
+									<select class="form-control form-control-sm" name="vnh_cls" id="vnh_cls">
+										<option value="0">Classificações...</option>
+										<!--? foreach($vinh_class as $cls){
+        						        	$sel_cls = ($vnh_class == $cls['id_classe'] ? "' selected='selected'>" : "'>" );
+											echo "<option value='".$cls['id_classe'].$sel_cls.$cls['classe']."</option>";
+								        }?-->							   
+									</select>
+								</div>
+								<div class="col-md-2">
+								    <button type="button" class="form-control form-control-sm" onClick="on_cad_cls()" >
+      									<img src="cadastro/lupa.png" width="15" height="15" >
+      								</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-10">
+									<select class="form-control form-control-sm" name="vnh_vra" id="vnh_vra">
+										<option value="0">Vinícolas...</option>	
+										<!--? foreach($vinh_vnra as $vra){
+        						        	$sel_vra = ($vnh_vnra == $vra['id_vinicultura'] ? "' selected='selected'>" : "'>" );
+											echo "<option value='".$vra['id_vinicultura'].$sel_vra.$vra['nome']."</option>";
+								        }?-->					   
+									</select>
+								</div>
+								<div class="col-md-2">
+								    <button type="button" class="form-control form-control-sm" onClick="on_cad_vin()" >
+      									<img src="cadastro/lupa.png" width="15" height="15" >
+      								</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+<!--	row 5	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar<!--? echo $vnh_cod =="" ? "Salvar" : "Atualizar"; ?--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_vin_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_dev_page()">Voltar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		function on_select_vnh() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('vnh_cod').value = "select";
+			document.cad_vnh_frm.submit();
+		};
+
+		function on_cad_vin(){
+	    	window.location.href = 'cad_vinicolas.html';
+		};
+
+		function on_cad_uva(){
+	    	window.location.href = 'cad_uvas.html';
+		};
+
+		function on_cad_cls(){
+	    	window.location.href = 'cad_classificacoes.html';
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_vinhos.html';
+		};
+
+		function on_vin_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('vnh_cod').value = "delete";
+			document.cad_vnh_frm.submit();
+		};
+
+		function on_dev_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+
+</body>
+

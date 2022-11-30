@@ -1,0 +1,120 @@
+<!--<? include 'php_script/cad_vinicultores-script.php';?>-->
+
+<!DOCTYPE html>
+<html = lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Cadastro Vincultores</title>
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/all.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<section id="Development">
+		<div class="padding">
+		<div class="container">
+			<h1 class="text-center">Cadastro Vincultores<h1>
+			<form class="contact-form-sm" method="POST" action="cad_vinicultores.html" name="cad_vtr_frm" id="cad_vtr_frm">
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="form-group col-md-8">
+						<select class="form-control form-control-sm" name="sel_cod" id="sel_cod" size="1" onchange="on_select_vtr();">
+							<option value="0">Selecione...</option>
+							<!--
+						    <? foreach($vtr_sel as $vntr){
+					        	$sel_vntr = ($vtr_cod == $vntr['id_resp'] ? "' selected='selected'>" : "'>" );
+								echo "<option value='".$vntr['id_resp'].$sel_vntr.$vntr['nome_resp']."</option>";
+					        }?>
+					    	-->
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<br>
+						<!--
+						<? echo $result == "" ? "<br>" : "<label class='form-control form-control-sm'><font size='2'>".$result."</font></label>"?>
+						-->
+					</div>
+<!--	row 1	-->
+					<div class="col-md-2" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vtr_cod" id="vtr_cod" placeholder="Código" readonly> <!-- value="<? echo $vtr_cod;?>" -->
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vtr_nam" id="vtr_nam" placeholder="Vinicultor"><!-- value="<?echo $vtr_name;?>" maxlength="50" requered-->
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vtr_fon" = id="vtr_fon" placeholder="Telefone"><!-- value ="<?echo $vtr_fone;?>" maxlength="20" required-->
+						</div>
+					</div>
+<!--	row 2	-->
+					<div class="col-md-6" >
+						<div class="form-group">
+							<input type="text" class="form-control form-control-sm" name="vtr_eml" name="vtr_eml" placeholder="E-mail"><!--value="<?echo $vtr_email;?>" maxlength="50"-->
+						</div>
+					</div>
+<!--	row 3	-->
+					<div class="col-md-12">
+						<div class="form-group">
+							<br><br><br><br><br>
+							<div class="row">
+								<div class="col-md-2"></div>					
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm">Salvar<!--<? echo $vtr_cod =="" ? "Salvar" : "Atualizar"; ?>--></button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="submit" class="form-control form-control-sm" onclick="on_vtr_delete()">Delete</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onclick="on_page_clear()">Limpar</button>
+									</div>
+								</div>
+								<div class="col-md-2">
+									<div class="form-group">
+										<button type="button" class="form-control form-control-sm" onClick="on_dev_page()">Voltar</button>
+									</div>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		function on_select_vtr() {
+			document.getElementById('sel_cod').value;
+			document.getElementById('vtr_cod').value = "select";
+			document.cad_vtr_frm.submit();
+		};
+
+		function on_page_clear(){
+	    	window.location.href = 'cad_vinicultores.html';
+		};
+
+		function on_vtr_delete(){
+			document.getElementById('sel_cod').value;
+			document.getElementById('vtr_cod').value = "delete";
+			document.cad_vtr_frm.submit();
+		};
+		
+		function on_dev_page(){
+	    	window.location.href = 'desenvolvedor.html';
+		};
+	</script>
+</body>
+
